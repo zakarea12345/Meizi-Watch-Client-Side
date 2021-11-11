@@ -1,0 +1,23 @@
+.top-bar{
+    background-color: #272626;
+    height: 40px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-bar{
+    background-color: #FFFFFF !important;
+}
+.site-name{
+    color: #A99679 !important;
+    font-size: 28px !important;
+    font-weight: bolder !important;
+}
+
+@media screen and (max-width: 640px) {
+    .top-bar{
+        display: none;
+    }
+ }
