@@ -13,14 +13,11 @@ const Navigation = () => {
           <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="main-bar">
                <Container>
                <Navbar.Brand className="site-name">
-                  <img
-                    alt=""
-                    src={icon}
-                    width="30"
-                    height="35px"
-                    className="d-inline-block align-top"
-                    style={{color:'black'}}
-                  />
+               <img
+                  alt=""
+                  src={icon}
+                  className="d-inline-block align-top"
+                />
                    MeiziWatch
                 </Navbar.Brand>
                <Navbar.Toggle aria-controls="responsive-navbar-nav" />

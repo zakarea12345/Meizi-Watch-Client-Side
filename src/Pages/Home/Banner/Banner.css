@@ -12,14 +12,13 @@
 }
 .banner-header{
     color: white;
-    letter-spacing: 0.05in;
     /*text-align: center;*/
 }
 .banner-title{
-    font-size: 70px;
+    font-size: 60px;
     color: white;
     font-weight: bolder;
-    letter-spacing: 0.05in;
+    width: 100%;
     /*text-align: center;*/
 }
 .banner-btn{
