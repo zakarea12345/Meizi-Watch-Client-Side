@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import './Banner.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,9 +17,13 @@ const Banner = () => {
                     <h1 className="banner-title">
                         Our Best Collections
                     </h1>
-                    <button className="banner-btn mx-auto">
-                        Explore More <FontAwesomeIcon icon={faArrowRight} />
-                     </button>
+                    <Link to="/exploreMore">
+                       <button className="banner-btn mx-auto">
+                           Explore More <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
+
+                    </Link>
+                    
                  </Col>
                </Row>
             </Container>

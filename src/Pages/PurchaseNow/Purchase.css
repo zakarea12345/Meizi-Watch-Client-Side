@@ -1,0 +1,21 @@
+.purchase-now-form{
+    margin: auto;
+    padding: 60px 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+.purchase-now-form input {
+    display: block;
+    margin: auto;
+    width: 40%;
+    margin-bottom: 20px;
+    outline: none;
+    border: navajowhite;
+    color: #101114;
+    padding: 8px 10px;
+    border-radius: 3px;
+    box-shadow: 5px 11px 14px -4px #080808
+}
+.error{
+    color: red;
+}

@@ -3,6 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import useProducts from '../../../Hooks/useProducts';
 import Product from '../Product/Product';
 
+
 const Products = () => {
     const {products} = useProducts();
     return (

@@ -1,0 +1,25 @@
+.login img{
+    height: 500px;
+    width: 100%;
+    margin-top: 40px;
+}
+.login-form{
+    margin-top: 80px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.login-form form input{
+    margin: auto;
+    width: 60%;
+    margin-bottom: 10px;
+    outline: none;
+    border: navajowhite;
+    color: #101114;
+    padding: 8px 10px;
+    border-radius: 3px;
+    box-shadow: 5px 11px 14px -4px #080808
+}
+.login-btn{
+    width:50% ;
+    margin-bottom: 20px;
+}
