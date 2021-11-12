@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Nav, Navbar, Button } from 'react-bootstrap';
+import {Container, Nav, Navbar, Button, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 import icon from '../../../images/icon.png';
@@ -26,6 +26,15 @@ const Navigation = () => {
                <Navbar.Collapse id="responsive-navbar-nav">
                  <Nav className="ms-auto">
                    <Nav.Link as={Link} to="/home" style={{fontWeight:'bolder'}}>Home</Nav.Link>
+                   {
+                     user?.email && 
+                     <NavDropdown title="Dashboard" id="collasible-nav-dropdown">
+                        <NavDropdown.Item as={Link} to="/pay">Pay</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/myOrders">My Orders</NavDropdown.Item>
+                        <NavDropdown.Item as={Link} to="/reviews">Reviews</NavDropdown.Item>
+                     </NavDropdown>
+
+                   }
                    {
                      user.email ?
                       <Button variant="light" onClick={logout}>LogOut</Button>

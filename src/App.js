@@ -12,6 +12,9 @@ import Regsiter from './Pages/LogIn/Register/Regsiter';
 import AuthProvider from './Contexts/AuthProvider';
 import Purchase from './Pages/PurchaseNow/Purchase';
 import PrivateRoute from './Pages/LogIn/PrivateRoute/PrivateRoute';
+import Pay from './Pages/Dashboard/Pay/Pay';
+import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
+import GiveReview from './Pages/Dashboard/GiveReview/GiveReview';
 
 
 function App() {
@@ -35,10 +38,18 @@ function App() {
         <Route path="/register">
           <Regsiter/>
         </Route>
+        <Route path="/pay">
+          <Pay/>
+        </Route>
+        <Route path="/myOrders">
+          <MyOrder/>
+        </Route>
+        <Route path="/reviews">
+          <GiveReview/>
+        </Route>
         <PrivateRoute path="/purchase/:productID">
           <Purchase/>
         </PrivateRoute>
-       
       </Switch>
     </Router>
     </AuthProvider>  

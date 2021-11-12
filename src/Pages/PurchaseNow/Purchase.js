@@ -47,41 +47,44 @@ const Purchase = () => {
                 <Row>
                     <Col>
                         <div className="mb-5">
-                            <h2 style={{textAlign:'center'}}>Product Detail</h2>
+                            <p style={{textAlign:'center'}}>Product Detail</p>
+                            <h1 style={{textAlign:'center', color:'#A99679 '}}>{matchedProduct?.productName} </h1>
                         </div>
                     </Col>
                 </Row>
+              <div className="d-flex justify-content-center align-items-center">
                 <Col md={6} sm={6} xs={12}>
-                    <div className=" d-flex align-items-center">
-                        <img src={matchedProduct?.imgUrl} alt="SingleServiceIMG" className='img-fluid' />
-                    </div>
-                </Col>
-                <Col md={6} sm={6} xs={12}>
-                    <div className=" text-start d-flex align-items-center">
-                    <div>
-                        <h3>{matchedProduct?.productName}</h3>
-                        <p>Details: <br /><span>{matchedProduct?.description}</span></p>
-                        <h4>Price: <span>{matchedProduct?.price}</span></h4>
-                    </div>
-                    </div>
-                </Col>
+                      <div className=" d-flex align-items-center">
+                          <img src={matchedProduct?.imgUrl} alt="SingleServiceIMG" className='img-fluid' />
+                      </div>
+                  </Col>
+                  <Col md={6} sm={6} xs={12}>
+                      <div className=" text-start d-flex align-items-center">
+                      <div>
+                          <h3>{matchedProduct?.productName}</h3>
+                          <p>Details: <br /><span>{matchedProduct?.description}</span></p>
+                          <h4>Price: <span>{matchedProduct?.price}</span></h4>
+                      </div>
+                      </div>
+                  </Col>
+              </div>
             </Row>
-        </Container>
-        <Container>
-          <form className="purchase-now-form" onSubmit={handleSubmit(onSubmit)}>
-              <h1 style={{textAlign:'center'}}>Place-Order</h1>
-            <input defaultValue={user.displayName} {...register("name")} />
-  
-            <input defaultValue={user.email} {...register("email", { required: true })} />
-            {errors.email && <span className="error">This field is required</span>}
-            <input placeholder="Address" defaultValue="" {...register("address")} />
-            <input placeholder="City" defaultValue="" {...register("city")} />
-            <input placeholder="phone number" defaultValue="" {...register("phone")} />
-
-            
-            <input type="submit" />
-          </form> 
-        </Container> 
+            </Container>
+           <Container>
+              <form className="purchase-now-form" onSubmit={handleSubmit(onSubmit)}>
+                  <h1 style={{textAlign:'center'}}>Place-Order</h1>
+                <input defaultValue={user.displayName} {...register("name")} />
+      
+                <input defaultValue={user.email} {...register("email", { required: true })} />
+                {errors.email && <span className="error">This field is required</span>}
+                <input placeholder="Address" defaultValue="" {...register("address")} />
+                <input placeholder="City" defaultValue="" {...register("city")} />
+                <input placeholder="phone number" defaultValue="" {...register("phone")} />
+    
+                
+                <input type="submit" />
+              </form> 
+          </Container> 
             <Footer></Footer>
         </>
     );
