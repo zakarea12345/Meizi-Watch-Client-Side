@@ -15,6 +15,9 @@ import PrivateRoute from './Pages/LogIn/PrivateRoute/PrivateRoute';
 import Pay from './Pages/Dashboard/Pay/Pay';
 import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import GiveReview from './Pages/Dashboard/GiveReview/GiveReview';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import AdminRoute from './Pages/LogIn/AdminRoute/AdminRoute';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders/ManageAllOrders';
 
 
 function App() {
@@ -47,6 +50,12 @@ function App() {
         <Route path="/reviews">
           <GiveReview/>
         </Route>
+        <AdminRoute path="/makeAdmin">
+          <MakeAdmin/>
+        </AdminRoute>
+        <AdminRoute path="/manageAllOrders">
+          <ManageAllOrders/>
+        </AdminRoute>
         <PrivateRoute path="/purchase/:productID">
           <Purchase/>
         </PrivateRoute>

@@ -6,7 +6,7 @@ import icon from '../../../images/icon.png';
 import useAuth from '../../../Hooks/useAuth';
 
 const Navigation = () => {
-    const {user, logout} = useAuth();
+    const {user, logout, admin} = useAuth();
     return (
         <>
           <div className="top-bar">
@@ -34,6 +34,15 @@ const Navigation = () => {
                         <NavDropdown.Item as={Link} to="/reviews">Reviews</NavDropdown.Item>
                      </NavDropdown>
 
+                   }
+                   {
+                     
+                     admin &&   <NavDropdown title="Admin-Dashboard" id="collasible-nav-dropdown">
+                          <NavDropdown.Item as={Link} to="/makeAdmin">Make Admin</NavDropdown.Item>
+                          <NavDropdown.Item as={Link} to="/manageAllOrders">Manage All Orders</NavDropdown.Item>
+                         </NavDropdown>
+                     
+                    
                    }
                    {
                      user.email ?
