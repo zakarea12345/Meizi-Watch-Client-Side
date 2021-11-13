@@ -8,8 +8,23 @@ import Navigation from '../../Shared/Navigation/Navigation';
 const GiveReview = () => {
     const { register, handleSubmit, reset } = useForm();
     const {user} = useAuth();
-    const onSubmit = () =>{
-        
+    const onSubmit = (data) =>{
+        data.name = user.displayName;
+        console.log(data)
+        fetch(`http://localhost:5000/reviews`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+      })
+          .then(res => res.json())
+          .then(data => {
+              if (data.insertedId) {
+                  alert('Thanks for giving the review.');
+                  reset();
+              }
+          })
     }
     return (
         <div>
@@ -21,6 +36,7 @@ const GiveReview = () => {
                 <input defaultValue={user.email} {...register("email", { required: true })} />
                 <textarea style={{display:'block',width:'40%',margin:"auto",boxShadow: "5px 11px 14px -4px #080808",border:"none",outline: "none",height:"150px",borderRadius:"3px"}} placeholder="Say something about product" {...register("message", { required: true })} />
                 <br />
+                <input placeholder="Rating" {...register("rating", { required: true })} />
                 <input type="submit" />
               </form> 
           </Container> 
