@@ -40,6 +40,8 @@ const Navigation = () => {
                      admin &&   <NavDropdown title="Admin-Dashboard" id="collasible-nav-dropdown">
                           <NavDropdown.Item as={Link} to="/makeAdmin">Make Admin</NavDropdown.Item>
                           <NavDropdown.Item as={Link} to="/manageAllOrders">Manage All Orders</NavDropdown.Item>
+                          <NavDropdown.Item as={Link} to="/manageProduct">Manage Products</NavDropdown.Item>
+                          <NavDropdown.Item as={Link} to="/addProduct">Add Product</NavDropdown.Item>
                          </NavDropdown>
                      
                     
