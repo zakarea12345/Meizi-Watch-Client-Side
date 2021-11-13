@@ -13,7 +13,7 @@ const ManageAllOrders = () => {
         .then(data => setOrders(data))
     },[]);
     const handleApproveStatus = key => {
-        const url = `http://localhost:5000/orders/${key}`
+        const url = `https://obscure-shore-04909.herokuapp.com/orders/${key}`
         fetch(url, {
             method: 'PUT',
             headers: {

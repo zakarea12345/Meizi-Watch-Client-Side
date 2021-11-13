@@ -7,6 +7,7 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Navigation = () => {
     const {user, logout, admin} = useAuth();
+    console.log(admin)
     return (
         <>
           <div className="top-bar">

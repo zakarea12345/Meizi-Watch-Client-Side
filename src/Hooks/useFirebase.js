@@ -1,7 +1,7 @@
 import initializeFirebase from "../Pages/LogIn/Firebase/firebase.init";
 import { useState, useEffect } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut,updateProfile } from "firebase/auth";
-import { useHistory } from "react-router";
+
 
 // initialize firebase app
 initializeFirebase();
@@ -27,6 +27,7 @@ const useFirebase = () => {
                 setUser(newUser);
                 //update user in database
                 saveUser(email, name);
+               
                 updateProfile(auth.currentUser, {
                     displayName: name
                   }).then(() => {
@@ -43,7 +44,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const loginUser = (email, password, location, history) => {
+    const loginUser = (email, password ,location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -68,15 +69,15 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, [])
+    }, [auth])
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://obscure-shore-04909.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email]);
     const saveUser = (email, displayName) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://obscure-shore-04909.herokuapp.com/users', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

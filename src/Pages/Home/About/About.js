@@ -5,7 +5,7 @@ import watch from '../../../images/watch.jpg';
 
 const About = () => {
     return (
-        <Container className="mt-5" className="about" >
+        <Container className="mt-5" className="about-style" >
            <Row className="about-section">
              <Col sm={12} md={6} className="mb-5">
                 <h6 style={{letterSpacing:'0.05in'}}>ABOUT US</h6>

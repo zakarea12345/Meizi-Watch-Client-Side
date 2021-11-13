@@ -11,7 +11,7 @@ const ManageProduct = () => {
         
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/products/${key}`
+            const url = `https://obscure-shore-04909.herokuapp.com/products/${key}`
             fetch(url, {
                 method: 'DELETE'
             })

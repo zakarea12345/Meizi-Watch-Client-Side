@@ -23,7 +23,7 @@ const Purchase = () => {
         data.orderStatus = orderView;
         data.userID = userID;
         console.log(data);
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://obscure-shore-04909.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
